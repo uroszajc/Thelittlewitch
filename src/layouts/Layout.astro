@@ -1,0 +1,128 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Astrology, Medium & Tarot by Ledonie — The Little Witch" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | The Little Witch</title>
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">The Little Witch</a>
+    <button class="menu-toggle" aria-label="Toggle menu">☾</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/services">Services</a></li>
+      <li><a href="/blog">Horoscopes</a></li>
+      <li><a href="/videos">Videos</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>The Little Witch</h3>
+        <p>Astrology · Medium · Tarot</p>
+      </div>
+      <div class="footer-links">
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Horoscopes</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <p class="footer-copy">© 2026 The Little Witch · Ledonie · Perth, Australia</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+    toggle?.addEventListener('click', () => nav?.classList.toggle('open'));
+  </script>
+</body>
+</html>
+
+<style is:global>
+  :root {
+    --gold: #c9a84c;
+    --purple: #7b5ea7;
+    --deep-purple: #4a3562;
+    --cream: #faf6f0;
+    --warm-brown: #6b4f3a;
+    --bg: #fdf9f4;
+    --text: #3d2e1e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Raleway', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+  a { color: var(--purple); text-decoration: none; transition: color 0.2s; }
+  a:hover { color: var(--gold); }
+  img { max-width: 100%; height: auto; }
+
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 2rem;
+    background: rgba(253,249,244,0.95);
+    backdrop-filter: blur(8px);
+    position: sticky; top: 0; z-index: 100;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--deep-purple); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
+  .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+
+  main { min-height: 70vh; }
+
+  footer {
+    background: var(--deep-purple);
+    color: rgba(255,255,255,0.8);
+    padding: 3rem 2rem 2rem;
+    margin-top: 4rem;
+    text-align: center;
+  }
+  .footer-brand h3 { font-size: 1.8rem; color: var(--gold); margin-bottom: 0.3rem; }
+  .footer-links { display: flex; gap: 2rem; justify-content: center; margin: 1.5rem 0; flex-wrap: wrap; }
+  .footer-links a { color: rgba(255,255,255,0.7); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-size: 0.8rem; opacity: 0.5; }
+
+  @media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); padding: 1rem; gap: 1rem; border-bottom: 1px solid rgba(201,168,76,0.2); }
+    .nav-links.open { display: flex; }
+  }
+
+  .btn {
+    display: inline-block; padding: 0.8rem 2rem; background: var(--gold); color: white;
+    border-radius: 4px; font-weight: 500; letter-spacing: 0.05em;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn:hover { background: var(--purple); color: white; transform: translateY(-1px); }
+  .btn-outline { background: transparent; border: 1px solid var(--gold); color: var(--gold); }
+  .btn-outline:hover { background: var(--gold); color: white; }
+</style>

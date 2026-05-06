@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About Ledonie" description="Meet Ledonie — Perth astrologer, medium and tarot reader.">
+  <section class="page-header">
+    <h1>About Ledonie</h1>
+    <p class="subtitle">The Little Witch</p>
+  </section>
+
+  <section class="about-content">
+    <div class="about-image">
+      <div class="image-placeholder">👁</div>
+    </div>
+    <div class="about-text">
+      <h2>A Message From Ledonie</h2>
+      <p>
+        I've always known that there was more to this world than what we see. From a young age, I felt the pull of the stars 
+        and the presence of something beyond the veil. Growing up in Perth, I began studying astrology in my teens and 
+        discovered a language that felt like coming home.
+      </p>
+      <p>
+        My journey as a medium came later — a gift I came to understand and embrace through my own spiritual practice. 
+        Connecting with loved ones who've crossed over, bringing through messages of love and reassurance — this is the 
+        work that fills my soul.
+      </p>
+      <p>
+        The tarot has been my companion through it all. Those 78 cards hold a universe of wisdom, and every reading 
+        is a conversation between the seen and unseen, between you and your highest self.
+      </p>
+      <p>
+        Whether you're seeking guidance on love, career, family, or your spiritual path — I believe the stars, 
+        the cards, and spirit have something to say. Let me help you hear it.
+      </p>
+
+      <div class="credentials">
+        <h3>Specialties</h3>
+        <ul>
+          <li>☽ Natal Chart Readings — understanding your cosmic blueprint</li>
+          <li>👁 Mediumship — connecting with loved ones who've crossed</li>
+          <li>🃏 Tarot & Oracle Readings — guidance from the cards</li>
+          <li>★ Transit Reports — what the heavens are doing for you right now</li>
+          <li>🌙 Weekly & Monthly Horoscopes</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="beliefs">
+    <div class="container">
+      <h2>My Approach</h2>
+      <div class="beliefs-grid">
+        <div>
+          <h3>Compassion First</h3>
+          <p>Every reading is held in a safe, non-judgmental space. Your story, your struggles, your joy — it's all welcome here.</p>
+        </div>
+        <div>
+          <h3>No Sugar-Coating</h3>
+          <p>The stars don't lie, and neither will I. What the cards and the cosmos show me, I share with honesty and care.</p>
+        </div>
+        <div>
+          <h3>Empowerment Over Dependency</h3>
+          <p>My goal is to help you find your own inner wisdom — not to keep you coming back for answers you already have.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+.page-header {
+  background: linear-gradient(135deg, #4a3562, #2d1f47);
+  color: white; text-align: center; padding: 5rem 2rem 3rem;
+}
+.page-header h1 { font-size: 3.5rem; }
+.page-header .subtitle { color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.9rem; margin-top: 0.5rem; }
+
+.about-content {
+  display: grid; grid-template-columns: 300px 1fr; gap: 4rem;
+  max-width: 1000px; margin: 4rem auto; padding: 0 2rem; align-items: start;
+}
+.image-placeholder {
+  background: linear-gradient(135deg, var(--purple), var(--deep-purple));
+  border-radius: 8px; width: 100%; aspect-ratio: 3/4;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 5rem; color: rgba(255,255,255,0.3);
+}
+.about-text h2 { font-size: 2rem; color: var(--deep-purple); margin-bottom: 1.5rem; }
+.about-text p { margin-bottom: 1rem; font-size: 1.02rem; }
+.credentials { margin-top: 2rem; }
+.credentials h3 { font-size: 1.3rem; color: var(--deep-purple); margin-bottom: 0.8rem; }
+.credentials ul { list-style: none; }
+.credentials li { padding: 0.4rem 0; font-size: 0.95rem; }
+
+.beliefs { background: var(--cream); padding: 4rem 2rem; }
+.beliefs h2 { text-align: center; font-size: 2.2rem; color: var(--deep-purple); margin-bottom: 2.5rem; }
+.beliefs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+.beliefs-grid h3 { color: var(--gold); font-size: 1.2rem; margin-bottom: 0.5rem; }
+.beliefs-grid p { font-size: 0.95rem; }
+
+.container { max-width: 1000px; margin: 0 auto; }
+
+@media (max-width: 768px) {
+  .about-content { grid-template-columns: 1fr; }
+  .about-image { max-width: 250px; margin: 0 auto; }
+}
+</style>

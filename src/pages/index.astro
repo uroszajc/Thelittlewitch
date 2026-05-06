@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home">
+  <section class="hero">
+    <div class="hero-content">
+      <p class="subtitle">Perth Astrologer · Medium · Tarot Reader</p>
+      <h1>The Little Witch</h1>
+      <p class="tagline">Guidance from the stars, voices from beyond, wisdom from the cards.</p>
+      <div class="hero-cta">
+        <a href="/services" class="btn">Explore Services</a>
+        <a href="/contact" class="btn btn-outline">Book a Reading</a>
+      </div>
+    </div>
+    <div class="hero-stars">✦ ✧ ★ ⋆ ✦ ✧</div>
+  </section>
+
+  <section class="intro">
+    <div class="container">
+      <h2>Welcome, I'm Ledonie</h2>
+      <p>
+        For as long as I can remember, I've felt a deep connection to the cosmos and the unseen world around us.
+        Astrology is my language, the tarot is my compass, and connecting with spirit is my purpose.
+      </p>
+      <p>
+        Whether you're seeking clarity through your birth chart, looking to connect with a loved one who's crossed over,
+        or simply want guidance from the cards — I'm here to help you find the answers you're searching for.
+      </p>
+    </div>
+  </section>
+
+  <section class="services-preview">
+    <div class="container">
+      <h2>How Can I Help?</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">☽</div>
+          <h3>Astrology</h3>
+          <p>Birth charts, transit readings, solar returns, and daily horoscopes. Understand the cosmic map written in the stars at the moment of your birth — and what the heavens are saying right now.</p>
+          <a href="/services#astrology">Learn More →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">👁</div>
+          <h3>Mediumship</h3>
+          <p>Connecting with loved ones who've passed. A gentle, compassionate reading that brings through messages of love, reassurance, and closure from those on the other side.</p>
+          <a href="/services#medium">Learn More →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🃏</div>
+          <h3>Tarot</h3>
+          <p>Oracle and tarot card readings for clarity, direction, and insight. Whether it's love, career, or life's big questions — the cards offer guidance when you need it most.</p>
+          <a href="/services#tarot">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="latest-posts">
+    <div class="container">
+      <h2>Latest Horoscopes</h2>
+      <div class="posts-grid">
+        <article class="post-card">
+          <span class="post-date">May 2026</span>
+          <h3>Monthly Horoscope: May 2026</h3>
+          <p>The stars are shifting in ways we haven't seen in years. Discover what May has in store for your zodiac sign.</p>
+          <a href="/blog/may-2026-horoscope">Read More →</a>
+        </article>
+        <article class="post-card">
+          <span class="post-date">April 2026</span>
+          <h3>Monthly Horoscope: April 2026</h3>
+          <p>A month of transformation and new beginnings. Here's what the cosmos has planned for you this April.</p>
+          <a href="/blog/april-2026-horoscope">Read More →</a>
+        </article>
+      </div>
+      <a href="/blog" class="btn btn-outline">All Horoscopes</a>
+    </div>
+  </section>
+
+  <section class="videos-preview">
+    <div class="container">
+      <h2>Watch & Listen</h2>
+      <p class="videos-intro">Catch my latest readings, live sessions and cosmic updates on YouTube.</p>
+      <a href="/videos" class="btn">Visit My YouTube</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+.hero {
+  background: linear-gradient(135deg, #4a3562 0%, #2d1f47 50%, #1a1030 100%);
+  color: white; text-align: center;
+  padding: 7rem 2rem 5rem;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(201,168,76,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(123,94,167,0.2) 0%, transparent 60%);
+}
+.hero-content { position: relative; max-width: 700px; margin: 0 auto; }
+.subtitle { color: #c9a84c; letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.85rem; font-weight: 500; margin-bottom: 1rem; }
+h1 { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 600; line-height: 1.1; margin-bottom: 1rem; }
+.tagline { font-size: 1.1rem; opacity: 0.8; font-style: italic; font-family: 'Cormorant Garamond', serif; margin-bottom: 2.5rem; }
+.hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.hero-stars { position: absolute; width: 100%; text-align: center; bottom: 1.5rem; color: rgba(201,168,76,0.4); font-size: 0.9rem; letter-spacing: 1em; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+section { padding: 5rem 0; }
+.intro { background: var(--cream); }
+.intro h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--deep-purple); }
+.intro p { max-width: 680px; margin: 0 auto 1rem; text-align: center; font-size: 1.05rem; }
+
+.services-preview h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--deep-purple); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.service-card { background: white; border-radius: 8px; padding: 2.5rem 2rem; text-align: center; border: 1px solid rgba(201,168,76,0.2); transition: transform 0.2s, box-shadow 0.2s; }
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(123,94,167,0.1); }
+.service-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.service-card h3 { font-size: 1.6rem; color: var(--deep-purple); margin-bottom: 0.8rem; }
+.service-card p { font-size: 0.95rem; color: #666; margin-bottom: 1.2rem; }
+.service-card a { color: var(--gold); font-weight: 500; }
+
+.latest-posts { background: var(--cream); }
+.latest-posts h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--deep-purple); }
+.posts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+.post-card { background: white; border-radius: 8px; padding: 2rem; border: 1px solid rgba(201,168,76,0.15); }
+.post-date { color: var(--gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; }
+.post-card h3 { font-size: 1.4rem; margin: 0.5rem 0 0.8rem; color: var(--deep-purple); }
+.post-card p { font-size: 0.9rem; color: #666; margin-bottom: 1rem; }
+.post-card a { color: var(--purple); font-size: 0.9rem; font-weight: 500; }
+
+.videos-preview { text-align: center; }
+.videos-preview h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--deep-purple); }
+.videos-intro { margin-bottom: 2rem; color: #666; }
+</style>

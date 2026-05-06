@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Services" description="Astrology, Mediumship & Tarot services by Ledonie — The Little Witch.">
+  <section class="page-header">
+    <h1>Services</h1>
+    <p class="subtitle">Astrology · Medium · Tarot</p>
+  </section>
+
+  <section class="services">
+
+    <div class="service-section" id="astrology">
+      <div class="service-content">
+        <div class="service-header">
+          <div class="service-icon">☽</div>
+          <h2>Astrology</h2>
+        </div>
+        <p>
+          Astrology is the language of the cosmos — a map written in the stars at the moment of your birth that speaks to your 
+          strengths, challenges, purpose, and timing. Whether you're seeking insight into your relationships, career, 
+          spiritual path, or the season you're in — your birth chart holds the answers.
+        </p>
+        <div class="offerings">
+          <div class="offering">
+            <h3>Birth / Natal Chart Reading</h3>
+            <p>A deep-dive into your complete cosmic blueprint. We'll explore your Sun, Moon, rising sign, planetary placements, 
+            aspects, and more. This is the foundational reading — 90 minutes.</p>
+            <span class="price">$120 / 90 min</span>
+          </div>
+          <div class="offering">
+            <h3>Transit Report</h3>
+            <p>What are the planets doing right now, and how are they affecting you specifically? A transit report looks at 
+            current planetary movements and their meaning for your chart.</p>
+            <span class="price">$80 / 60 min</span>
+          </div>
+          <div class="offering">
+            <h3>Solar Return</h3>
+            <p>Your birthday marks when the Sun returns to its exact position at your birth. A solar return reading gives 
+            you the themes and opportunities for the year ahead.</p>
+            <span class="price">$90 / 60 min</span>
+          </div>
+          <div class="offering">
+            <h3>Monthly Horoscope</h3>
+            <p>A written horoscope for your zodiac sign — published monthly. Covers key themes, dates to watch, and 
+            cosmic guidance for the month ahead.</p>
+            <span class="price">Free on the blog</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-image">☽</div>
+    </div>
+
+    <div class="service-section" id="medium">
+      <div class="service-content">
+        <div class="service-header">
+          <div class="service-icon">👁</div>
+          <h2>Mediumship</h2>
+        </div>
+        <p>
+          As a medium, I serve as a bridge between this world and the next. If you've lost someone you love and long 
+          to know they're at peace — or that they have a message for you — I can help open that connection. 
+          My approach is gentle, compassionate, and focused on love, not drama.
+        </p>
+        <p>
+          I don't do cold readings or make general statements. What comes through is specific, personal, and meant for you.
+        </p>
+        <div class="offerings">
+          <div class="offering">
+            <h3>Private Mediumship Reading</h3>
+            <p>One-on-one session to connect with your loved one. Evidence of survival, messages of love, and 
+            any guidance they have for you. 60 minutes.</p>
+            <span class="price">$130 / 60 min</span>
+          </div>
+          <div class="offering">
+            <h3>Mediumship Gallery / Group Session</h3>
+            <p>Open events where multiple people receive readings in a group setting. Each person receives a personal 
+            reading in a supportive, shared environment.</p>
+            <span class="price">$60 / person</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-image">👁</div>
+    </div>
+
+    <div class="service-section" id="tarot">
+      <div class="service-content">
+        <div class="service-header">
+          <div class="service-icon">🃏</div>
+          <h2>Tarot</h2>
+        </div>
+        <p>
+          The tarot is one of humanity's oldest wisdom tools — 78 cards that hold a mirror up to your inner world 
+          and illuminate the path forward. Whether you're facing a decision, feeling stuck, or simply seeking direction, 
+          the cards offer clarity and guidance.
+        </p>
+        <div class="offerings">
+          <div class="offering">
+            <h3>Single Card Draw</h3>
+            <p>A quick, focused reading around one specific question or situation. Great for daily guidance or 
+            when you need a quick yes/no direction.</p>
+            <span class="price">$30 / 15 min</span>
+          </div>
+          <div class="offering">
+            <h3>Three Card Reading</h3>
+            <p>Past, present, future — or situation, obstacle, guidance. A simple but powerful three-card spread 
+            for clarity on any topic.</p>
+            <span class="price">$50 / 30 min</span>
+          </div>
+          <div class="offering">
+            <h3>Full Celtic Cross Reading</h3>
+            <p>The classic 10-card spread. A deep, thorough reading exploring the full landscape of your question 
+            or situation. The full picture.</p>
+            <span class="price">$100 / 60 min</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-image">🃏</div>
+    </div>
+
+  </section>
+
+  <section class="booking-cta">
+    <h2>Ready to Book?</h2>
+    <p>I'd love to hear from you. Reach out and let's find a time that works.</p>
+    <a href="/contact" class="btn">Get in Touch</a>
+  </section>
+</Layout>
+
+<style>
+.page-header {
+  background: linear-gradient(135deg, #4a3562, #2d1f47);
+  color: white; text-align: center; padding: 5rem 2rem 3rem;
+}
+.page-header h1 { font-size: 3.5rem; }
+.page-header .subtitle { color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.9rem; margin-top: 0.5rem; }
+
+.services { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+
+.service-section {
+  display: grid; grid-template-columns: 1fr 200px; gap: 3rem;
+  align-items: center; padding: 4rem 0; border-bottom: 1px solid rgba(201,168,76,0.2);
+}
+.service-section:last-child { border-bottom: none; }
+
+.service-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.service-icon { font-size: 2.5rem; }
+.service-header h2 { font-size: 2.5rem; color: var(--deep-purple); }
+.service-content p { margin-bottom: 1rem; line-height: 1.8; }
+.service-image { font-size: 6rem; text-align: center; opacity: 0.15; }
+
+.offerings { display: grid; gap: 1.5rem; margin-top: 2rem; }
+.offering { background: var(--cream); border-radius: 6px; padding: 1.5rem 1.8rem; border-left: 3px solid var(--gold); }
+.offering h3 { font-size: 1.2rem; color: var(--deep-purple); margin-bottom: 0.5rem; }
+.offering p { font-size: 0.92rem; color: #555; margin-bottom: 0.5rem; }
+.offering .price { color: var(--gold); font-weight: 600; font-size: 0.95rem; }
+
+.booking-cta { text-align: center; background: var(--deep-purple); color: white; padding: 4rem 2rem; }
+.booking-cta h2 { color: var(--gold); font-size: 2.5rem; margin-bottom: 1rem; }
+.booking-cta p { margin-bottom: 2rem; opacity: 0.8; }
+
+@media (max-width: 768px) {
+  .service-section { grid-template-columns: 1fr; }
+  .service-image { display: none; }
+}
+</style>

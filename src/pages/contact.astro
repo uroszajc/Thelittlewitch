@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact" description="Get in touch with Ledonie — The Little Witch — for bookings and enquiries.">
+  <section class="page-header">
+    <h1>Get in Touch</h1>
+    <p class="subtitle">I'd love to hear from you</p>
+  </section>
+
+  <section class="contact-content">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-form-wrapper">
+          <h2>Send a Message</h2>
+          <p>For bookings, enquiries, or just to say hello — fill out the form below and I'll get back to you within 48 hours.</p>
+
+          <form name="contact" method="POST" action="https://formspree.io/f/yourformid" class="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="service">Service of Interest</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option value="astrology">Astrology / Birth Chart</option>
+                <option value="medium">Mediumship</option>
+                <option value="tarot">Tarot Reading</option>
+                <option value="horoscope">Monthly Horoscope Subscription</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message *</label>
+              <textarea id="message" name="message" required rows="6" placeholder="Tell me how I can help..."></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message ✨</button>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <div class="info-card">
+            <h3>Quick Contact</h3>
+            <p>Email: <a href="mailto:hello@thelittlewitch.com.au">hello@thelittlewitch.com.au</a></p>
+            <p>Response time: within 48 hours</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Availability</h3>
+            <p>Readings available by appointment.<br />Weekday and weekend sessions available.</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Location</h3>
+            <p>Perth, Western Australia<br />Online sessions available Australia-wide and internationally.</p>
+          </div>
+
+          <div class="info-card social">
+            <h3>Follow Along</h3>
+            <div class="social-links">
+              <a href="https://www.youtube.com/@TheLittleWitch" target="_blank" rel="noopener">▶ YouTube</a>
+              <a href="https://www.instagram.com/thelittlewitch" target="_blank" rel="noopener">📷 Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+.page-header {
+  background: linear-gradient(135deg, #4a3562, #2d1f47);
+  color: white; text-align: center; padding: 5rem 2rem 3rem;
+}
+.page-header h1 { font-size: 3.5rem; }
+.page-header .subtitle { color: var(--gold); font-style: italic; font-size: 1.1rem; margin-top: 0.5rem; }
+
+.contact-content { padding: 4rem 0; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+.contact-grid { display: grid; grid-template-columns: 1fr 320px; gap: 4rem; }
+
+.contact-form-wrapper h2 { font-size: 2rem; color: var(--deep-purple); margin-bottom: 1rem; }
+.contact-form-wrapper > p { color: #555; margin-bottom: 2rem; }
+
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--deep-purple); margin-bottom: 0.4rem; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 0.8rem 1rem; border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 4px; font-family: 'Raleway', sans-serif; font-size: 0.95rem;
+  background: white; transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none; border-color: var(--gold);
+}
+.form-group textarea { resize: vertical; }
+.form-group select { cursor: pointer; }
+
+.contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+.info-card { background: var(--cream); border-radius: 8px; padding: 1.5rem; }
+.info-card h3 { font-size: 1.1rem; color: var(--deep-purple); margin-bottom: 0.8rem; border-bottom: 1px solid rgba(201,168,76,0.3); padding-bottom: 0.5rem; }
+.info-card p { font-size: 0.9rem; color: #555; margin-bottom: 0.5rem; }
+.info-card a { color: var(--purple); }
+.info-card a:hover { color: var(--gold); }
+
+.social-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+.social-links a { font-size: 0.9rem; color: var(--purple); font-weight: 500; }
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+</style>

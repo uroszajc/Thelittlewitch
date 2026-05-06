@@ -1,0 +1,129 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Blog posts data - in a real site this would come from markdown files
+const posts = [
+  {
+    slug: "may-2026-horoscope",
+    title: "Monthly Horoscope: May 2026",
+    date: "May 2026",
+    sign: "All Signs",
+    excerpt: "May 2026 brings a powerful conjunction of Mercury and Venus, a New Moon in Taurus, and a transformational square from Saturn to Neptune. Here's what the stars have in store.",
+    tags: ["horoscope", "monthly", "may 2026"]
+  },
+  {
+    slug: "april-2026-horoscope",
+    title: "Monthly Horoscope: April 2026",
+    date: "April 2026",
+    sign: "All Signs",
+    excerpt: "April's skies are dramatic — Mars meets Jupiter, a Total Lunar Eclipse in Scorpio, and Mercury going retrograde. The cosmos is asking us to go deeper.",
+    tags: ["horoscope", "monthly", "april 2026"]
+  },
+  {
+    slug: "understanding-your-birth-chart",
+    title: "Understanding Your Birth Chart: A Beginner's Guide",
+    date: "March 2026",
+    sign: "Education",
+    excerpt: "Your birth chart is a snapshot of the sky at the exact moment you were born. Here's how to read it and what it means.",
+    tags: ["astrology", "education", "beginners"]
+  },
+  {
+    slug: "venus-retrograde-march-2026",
+    title: "Venus Retrograde: What It Means For Your Relationships",
+    date: "March 2026",
+    sign: "All Signs",
+    excerpt: "Venus goes retrograde in Aries on March 1st. This is a time for reflection, not action — especially in love and finances.",
+    tags: ["astrology", "venus", "retrograde"]
+  }
+];
+---
+
+<Layout title="Horoscopes & Blog" description="Monthly horoscopes, astrology guides and spiritual insights by Ledonie.">
+  <section class="page-header">
+    <h1>Horoscopes & Insights</h1>
+    <p class="subtitle">Written with love under the stars</p>
+  </section>
+
+  <section class="blog-content">
+    <div class="container">
+      <div class="posts-list">
+        {posts.map(post => (
+          <article class="post-item">
+            <div class="post-meta">
+              <span class="post-date">{post.date}</span>
+              <span class="post-sign">{post.sign}</span>
+            </div>
+            <h2><a href={`/blog/${post.slug}`}>{post.title}</a></h2>
+            <p>{post.excerpt}</p>
+            <div class="post-tags">
+              {post.tags.map(tag => <span class="tag">{tag}</span>)}
+            </div>
+            <a href={`/blog/${post.slug}`} class="read-more">Read More →</a>
+          </article>
+        ))}
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar-widget">
+          <h3>Browse by Sign</h3>
+          <ul class="signs-list">
+            <li><a href="/blog/aries">♈ Aries</a></li>
+            <li><a href="/blog/taurus">♉ Taurus</a></li>
+            <li><a href="/blog/gemini">♊ Gemini</a></li>
+            <li><a href="/blog/cancer">♋ Cancer</a></li>
+            <li><a href="/blog/leo">♌ Leo</a></li>
+            <li><a href="/blog/virgo">♍ Virgo</a></li>
+            <li><a href="/blog/libra">♎ Libra</a></li>
+            <li><a href="/blog/scorpio">♏ Scorpio</a></li>
+            <li><a href="/blog/sagittarius">♐ Sagittarius</a></li>
+            <li><a href="/blog/capricorn">♑ Capricorn</a></li>
+            <li><a href="/blog/aquarius">♒ Aquarius</a></li>
+            <li><a href="/blog/pisces">♓ Pisces</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-widget">
+          <h3>Subscribe</h3>
+          <p>Get the monthly horoscope delivered to your inbox.</p>
+          <a href="/contact" class="btn">Contact to Subscribe</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Layout>
+
+<style>
+.page-header {
+  background: linear-gradient(135deg, #4a3562, #2d1f47);
+  color: white; text-align: center; padding: 5rem 2rem 3rem;
+}
+.page-header h1 { font-size: 3.5rem; }
+.page-header .subtitle { color: var(--gold); font-style: italic; font-size: 1.1rem; margin-top: 0.5rem; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; display: grid; grid-template-columns: 1fr 280px; gap: 3rem; }
+
+.post-item { border-bottom: 1px solid rgba(201,168,76,0.2); padding: 2rem 0; }
+.post-item:last-child { border-bottom: none; }
+.post-meta { display: flex; gap: 1rem; margin-bottom: 0.5rem; }
+.post-date { color: var(--gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; }
+.post-sign { color: var(--purple); font-size: 0.8rem; text-transform: uppercase; }
+.post-item h2 { font-size: 1.8rem; margin-bottom: 0.8rem; }
+.post-item h2 a { color: var(--deep-purple); }
+.post-item h2 a:hover { color: var(--gold); }
+.post-item p { color: #555; font-size: 0.97rem; margin-bottom: 1rem; }
+.post-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.tag { background: var(--cream); color: var(--purple); font-size: 0.75rem; padding: 0.2rem 0.7rem; border-radius: 20px; }
+.read-more { color: var(--gold); font-weight: 500; font-size: 0.9rem; }
+
+.sidebar { display: flex; flex-direction: column; gap: 2rem; }
+.sidebar-widget { background: var(--cream); border-radius: 8px; padding: 1.5rem; }
+.sidebar-widget h3 { font-size: 1.2rem; color: var(--deep-purple); margin-bottom: 1rem; border-bottom: 1px solid rgba(201,168,76,0.3); padding-bottom: 0.5rem; }
+.signs-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.3rem; }
+.signs-list a { font-size: 0.85rem; color: var(--text); }
+.signs-list a:hover { color: var(--gold); }
+.sidebar-widget p { font-size: 0.85rem; color: #666; margin-bottom: 1rem; }
+
+@media (max-width: 768px) {
+  .container { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+}
+</style>
