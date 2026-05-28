@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://www2.thelittlewitch.com.au',
-  base: '/',
+  site: 'https://uroszajc.github.io',
+  base: '/Thelittlewitch',
   build: {
     outDir: './dist'
   }
